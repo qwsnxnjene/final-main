@@ -31,10 +31,10 @@ jobs:
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
       
       - name: extract metadata for Docker
-      id: meta
-      uses: docker/metadata-action@v5.5.1
-      with:
-        images: ${{ secrets.DOCKER_USERNAME}}/final-main
+        id: meta
+        uses: docker/metadata-action@v5.5.1
+        with:
+          images: ${{ secrets.DOCKER_USERNAME}}/final-main
       
       - name: build and push Docker image
         uses: docker/build-push-action@v5
